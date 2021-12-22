@@ -1,2 +1,3 @@
 # pokemonReduxTS
-![all pokemons page](https://i.ibb.co/y8dJMgg/all.png)
+![all pokemons page](https://i.ibb.co/mBnPHxx/all-min.png) 
+![one pokemon page](https://i.ibb.co/R471f95/one-min.png)
