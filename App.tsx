@@ -1,20 +1,43 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+//import { registerRootComponent } from 'expo';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+import { Dimensions, SafeAreaView, StatusBar, StyleSheet } from 'react-native';
+import React from 'react';
+import Main from './Main';
+import { Provider } from 'react-redux';
+
+import configureStore from './src/store/configureStore';
+
+const store = configureStore()
+
+const App = () => (
+   <Provider store={store}>
+      <StatusBar barStyle="dark-content" hidden />
+      <SafeAreaView style={styles.safeAreaView}>
+         <Main />
+      </SafeAreaView>
+   </Provider>
+)
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+   safeAreaView: {
+      flex: 1,
+      justifyContent: 'center',
+      backgroundColor: "rgba(0, 0, 255, 0.5)",
+      // padding: 0,
+      // margin: 0,
+   },
 });
+
+export default App;
+
+//registerRootComponent(RNRedux);
+
+
+
+
+
+
+
+
+
+
