@@ -1,6 +1,4 @@
-import { TypeKeys } from '../constants';
-
-import { ActionTypes } from '../actions/actionTypes';
+import { TypeKeys, ActionTypes } from '../../types';
 
 const initialState: null = null;
 

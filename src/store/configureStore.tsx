@@ -1,13 +1,15 @@
-import { createStore, combineReducers } from 'redux';
+import { Store, createStore, combineReducers } from 'redux';
 import pokemonReducer from '../reducers/pokemonReducer';
 import pokesReducer from '../reducers/pokesReducer';
 
-const rootReducer = combineReducers({
+import { RootState } from '../../types';
+
+const rootReducer = combineReducers<RootState>({
    pokemon: pokemonReducer,
    pokes: pokesReducer
 });
 
-const configureStore = () => {
+const configureStore = (): Store => {
    return createStore(rootReducer);
 }
 

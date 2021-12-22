@@ -1,11 +1,9 @@
-import { TypeKeys } from "../constants";
+import { ActionTypes, TypeKeys, Pokemon, Pokes } from "../../types";
 
-import { ActionTypes } from "./actionTypes";
-
-export const setPokemon = (payload: null | any[]): ActionTypes => ({
+export const setPokemon = (payload: Pokemon): ActionTypes => ({
    type: TypeKeys.POKEMON_SET, payload,
 });
 
-export const setAllPokes = (payload: any[]): ActionTypes => ({
+export const setAllPokes = (payload: Pokes): ActionTypes => ({
    type: TypeKeys.POKES_SET, payload,
 });

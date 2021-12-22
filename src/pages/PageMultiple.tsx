@@ -3,6 +3,8 @@ import { View, ActivityIndicator } from 'react-native';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+
+import { Pokes, RootState, ActionTypes } from "../../types";
 import * as pokemonActions from '../actions/actions';
 
 import Filter from '../components/Filter';
@@ -11,15 +13,17 @@ import PokesList from "../components/PokesList"
 const limit = 50;
 
 interface IPageMultiple {
+   allPokes: Pokes,
    actions: any,
-   allPokes: any[]
 }
+
+export type FilterNames = (text: string) => void;
 
 const PageMultiple: React.FC<IPageMultiple> = ({
    actions, allPokes
 }) => {
 
-   const [filteredPokesCharacteristics, setFilteredPokesCharacteristics] = useState<any[]>([]);//!
+   const [filteredPokesCharacteristics, setFilteredPokesCharacteristics] = useState<any[]>([]);
    const [isLoading, setIsLoading] = useState<boolean>(false);
 
    const setDefaultAllPokes = useCallback(() => {
@@ -41,13 +45,13 @@ const PageMultiple: React.FC<IPageMultiple> = ({
       setDefaultAllPokes()
    }, [])
 
-   const filterNames = (text: any) => {//!
+   const filterNames: FilterNames = (text: string): void => {
       text = text.trim().toLowerCase();
       if (!text.length) {
          setFilteredPokesCharacteristics(allPokes)
          return;
       }
-      setFilteredPokesCharacteristics(allPokes.filter((poke: any) => poke.name.indexOf(text) > -1)) //!
+      setFilteredPokesCharacteristics(allPokes.filter((poke: any) => poke.name.indexOf(text) > -1))
    }
 
    return (
@@ -70,16 +74,15 @@ const PageMultiple: React.FC<IPageMultiple> = ({
    );
 }
 
-const mapStateToProps = (state: any) => ({ //!
+const mapStateToProps = (state: RootState) => ({
    allPokes: state.pokes.allPokes,
-   filteredPokes: state.pokes.filteredPokes
 });
 
 const ActionCreators = Object.assign(
    {},
    pokemonActions,
 );
-const mapDispatchToProps = (dispatch: any) => ({//!
+const mapDispatchToProps = (dispatch: any) => ({
    actions: bindActionCreators(ActionCreators, dispatch),
 });
 

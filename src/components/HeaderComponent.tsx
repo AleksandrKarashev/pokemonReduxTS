@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const HeaderComponent = () => {
+const HeaderComponent: React.FC = () => {
 
    return (
       <View style={styles.header}>

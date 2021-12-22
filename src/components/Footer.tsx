@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const Footer = () => {
+const Footer: React.FC = () => {
 
    return (
       <View style={styles.footer}>

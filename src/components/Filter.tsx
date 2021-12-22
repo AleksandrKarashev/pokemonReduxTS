@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { View, TextInput, StyleSheet } from 'react-native';
+
+import { FilterNames } from "../pages/PageMultiple";
+
 import ButtonComponent from './ButtonComponent';
 
 interface IFilter {
-   filterNames(text: string): void
+   filterNames: FilterNames
 }
 
 const Filter: React.FC<IFilter> = ({

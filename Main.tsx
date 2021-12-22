@@ -2,7 +2,10 @@ import React from 'react';
 import { StyleSheet, View, ImageBackground, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+
+import { RootState, Pokemon } from "./types";
 import * as pokemonActions from './src/actions/actions';
+
 
 import PageIndividual from './src/pages/PageIndividual';
 import PageMultiple from './src/pages/PageMultiple';
@@ -13,7 +16,7 @@ import HeaderComponent from './src/components/HeaderComponent';
 const image = { uri: "https://iili.io/7yJVa4.jpgttps://reactjs.org/logo-og.png" };
 
 interface IMain {
-   pokemon: null | any;
+   pokemon: Pokemon
 }
 
 const Main: React.FC<IMain> = ({
@@ -48,7 +51,7 @@ const styles = StyleSheet.create({
    },
 });
 
-const mapStateToProps = (state: any) => ({ //!
+const mapStateToProps = (state: RootState) => ({
    pokemon: state.pokemon,
 });
 
@@ -56,7 +59,7 @@ const ActionCreators = Object.assign(
    {},
    pokemonActions,
 );
-const mapDispatchToProps = (dispatch: any) => ({//!
+const mapDispatchToProps = (dispatch: any) => ({
    actions: bindActionCreators(ActionCreators, dispatch),
 });
 

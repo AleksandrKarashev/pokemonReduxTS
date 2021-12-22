@@ -1,16 +1,16 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
-
-import { connect, MapStateToProps } from 'react-redux';
+import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+
+import { RootState, Pokemon } from "../../types";
 import * as pokemonActions from '../actions/actions';
 
 import ButtonComponent from '../components/ButtonComponent';
 
-
 interface IPageIndividual {
-   pokemon: null | any;
-   actions: any //!
+   pokemon: Pokemon;
+   actions: any
 }
 
 const PageIndividual: React.FC<IPageIndividual> = ({
@@ -20,7 +20,7 @@ const PageIndividual: React.FC<IPageIndividual> = ({
    return (
       <>
          <ButtonComponent
-            execFunction={() => actions.setPokemon(null)}//!
+            execFunction={() => actions.setPokemon(null)}
          >Return to main page
          </ButtonComponent>
          <View
@@ -42,7 +42,7 @@ const PageIndividual: React.FC<IPageIndividual> = ({
             </Text>
 
             {
-               pokemon.abilities.map((ab: any, i: any) =>//!
+               pokemon.abilities.map((ab: any, i: number) =>
                   <Text
                      key={Math.random()}
                      style={styles.text}
@@ -78,27 +78,15 @@ const styles = StyleSheet.create({
    },
 });
 
-// const mapStateToProps: MapStateToProps<ConnectedProps, OwnProps> = (state: AppState, props: OwnProps) => {
-//    return {
-//      loading: state.loading,
-//      data: state.data,
-//      id: props.match.params.id,
-//    };
-//  };
-
-const mapStateToProps: MapStateToProps<any, any> = (state: any, props: any) => ({//!
+const mapStateToProps = (state: RootState) => ({
    pokemon: state.pokemon,
 });
-
-// const mapStateToProps = (state: any) => ({//!
-//    pokemon: state.pokemon,
-// });
 
 const ActionCreators = Object.assign(
    {},
    pokemonActions,
 );
-const mapDispatchToProps = (dispatch: any) => ({//!
+const mapDispatchToProps = (dispatch: any) => ({
    actions: bindActionCreators(ActionCreators, dispatch),
 });
 
