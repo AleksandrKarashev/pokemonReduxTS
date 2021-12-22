@@ -20,9 +20,9 @@ Desenvolver uma aplicação em react native que consuma uma das duas API's públ
 
 Ao término do desafio, subir o projeto para alguma plataforma (github, gitlab...) e entrar em contato para convidar os membros da equipe para o projeto (para que possamos analisar o mesmo).
 
-Desenvolvedor: Aleksandr Karashev
-Github nome: Schulzkafer
-Tel.: 5521998797313 
-WhatsApp.: 5521998797313 (preferencial)
-Email: atsbyy@gmail.com
-Linkedin: https://www.linkedin.com/in/aleksandr-karashev-a73a61228/
+- Desenvolvedor: Aleksandr Karashev
+- Github nome: Schulzkafer
+- Tel.: 5521998797313 
+- WhatsApp.: 5521998797313 (preferencial)
+- Email: atsbyy@gmail.com
+- Linkedin: https://www.linkedin.com/in/aleksandr-karashev-a73a61228/
