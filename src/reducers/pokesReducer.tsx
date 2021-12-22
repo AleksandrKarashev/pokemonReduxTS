@@ -1,10 +1,10 @@
 import { TypeKeys } from '../constants';
 
-import { Actions } from '../actions/pokemons';
+import { ActionTypes } from '../actions/actionTypes';
 
-const initialState: any[] = []; //!
+const initialState: any[] = [];
 
-const pokesReducer = (state = initialState, action: Actions) => { //!
+const pokesReducer = (state = initialState, action: ActionTypes) => {
    switch (action.type) {
       case TypeKeys.POKES_SET:
          return {

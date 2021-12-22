@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 
 import { connect, MapStateToProps } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as pokemonActions from '../actions/pokemons';
+import * as pokemonActions from '../actions/actions';
 
 import ButtonComponent from '../components/ButtonComponent';
 

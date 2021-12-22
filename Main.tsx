@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, ImageBackground, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as pokemonActions from './src/actions/pokemons';
+import * as pokemonActions from './src/actions/actions';
 
 import PageIndividual from './src/pages/PageIndividual';
 import PageMultiple from './src/pages/PageMultiple';

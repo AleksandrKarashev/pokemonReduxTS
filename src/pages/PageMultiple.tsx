@@ -3,7 +3,7 @@ import { View, ActivityIndicator } from 'react-native';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as pokemonActions from '../actions/pokemons';
+import * as pokemonActions from '../actions/actions';
 
 import Filter from '../components/Filter';
 import PokesList from "../components/PokesList"
