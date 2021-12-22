@@ -1,20 +1,26 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 
-import { connect } from 'react-redux';
+import { connect, MapStateToProps } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as pokemonActions from '../actions/pokemons';
 
 import ButtonComponent from '../components/ButtonComponent';
 
-const PageIndividual = (props: any) => {//!
 
-   const pokemon = props.pokemon;
+interface IPageIndividual {
+   pokemon: null | any;
+   actions: any //!
+}
+
+const PageIndividual: React.FC<IPageIndividual> = ({
+   pokemon, actions
+}) => {
 
    return (
       <>
          <ButtonComponent
-            execFunction={() => props.actions.setPokemon(null)}
+            execFunction={() => actions.setPokemon(null)}//!
          >Return to main page
          </ButtonComponent>
          <View
@@ -72,9 +78,21 @@ const styles = StyleSheet.create({
    },
 });
 
-const mapStateToProps = (state: any) => ({//!
+// const mapStateToProps: MapStateToProps<ConnectedProps, OwnProps> = (state: AppState, props: OwnProps) => {
+//    return {
+//      loading: state.loading,
+//      data: state.data,
+//      id: props.match.params.id,
+//    };
+//  };
+
+const mapStateToProps: MapStateToProps<any, any> = (state: any, props: any) => ({//!
    pokemon: state.pokemon,
 });
+
+// const mapStateToProps = (state: any) => ({//!
+//    pokemon: state.pokemon,
+// });
 
 const ActionCreators = Object.assign(
    {},

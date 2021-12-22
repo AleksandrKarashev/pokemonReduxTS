@@ -10,10 +10,17 @@ import PokesList from "../components/PokesList"
 
 const limit = 50;
 
-const PageMultiple = (props: any) => {//!
+interface IPageMultiple {
+   actions: any,
+   allPokes: any[]
+}
+
+const PageMultiple: React.FC<IPageMultiple> = ({
+   actions, allPokes
+}) => {
 
    const [filteredPokesCharacteristics, setFilteredPokesCharacteristics] = useState<any[]>([]);//!
-   const [isLoading, setIsLoading] = useState(false);
+   const [isLoading, setIsLoading] = useState<boolean>(false);
 
    const setDefaultAllPokes = useCallback(() => {
       setIsLoading(true)
@@ -23,7 +30,7 @@ const PageMultiple = (props: any) => {//!
       Promise.all(requests)
          .then(responses => Promise.all(responses.map(res => res.json())))
          .then(ps => {
-            props.actions.setAllPokes(ps)
+            actions.setAllPokes(ps)
             setFilteredPokesCharacteristics(ps)
          })
          .catch((err) => console.log(err.message));
@@ -37,10 +44,10 @@ const PageMultiple = (props: any) => {//!
    const filterNames = (text: any) => {//!
       text = text.trim().toLowerCase();
       if (!text.length) {
-         setFilteredPokesCharacteristics(props.allPokes)
+         setFilteredPokesCharacteristics(allPokes)
          return;
       }
-      setFilteredPokesCharacteristics(props.allPokes.filter((poke: any) => poke.name.indexOf(text) > -1)) //!
+      setFilteredPokesCharacteristics(allPokes.filter((poke: any) => poke.name.indexOf(text) > -1)) //!
    }
 
    return (
@@ -56,7 +63,7 @@ const PageMultiple = (props: any) => {//!
                /> :
                <PokesList
                   filteredPokesCharacteristics={filteredPokesCharacteristics}
-                  setPokemon={props.actions.setPokemon}
+                  setPokemon={actions.setPokemon}
                />
          }
       </View>

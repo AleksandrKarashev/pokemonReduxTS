@@ -11,35 +11,35 @@ const PokesList: React.FC<IPokesList> = ({
 }) => {
 
    return (
-      // <ScrollView>
-      <View style={styles.view}>
-         {
-            filteredPokesCharacteristics.map((poke: any) => {
-               return (
-                  <View
-                     key={Math.random()}
-                     style={styles.toCenter}
-                  >
-                     <TouchableOpacity
-                        style={styles.touchableOpacity}
-                        onPress={() => setPokemon(poke)}
+      <ScrollView>
+         <View style={styles.view}>
+            {
+               filteredPokesCharacteristics.map((poke: any) => {
+                  return (
+                     <View
+                        key={Math.random()}
+                        style={styles.toCenter}
                      >
-                        <Text style={styles.text}>{poke.name}</Text>
+                        <TouchableOpacity
+                           style={styles.touchableOpacity}
+                           onPress={() => setPokemon(poke)}
+                        >
+                           <Text style={styles.text}>{poke.name}</Text>
 
-                        <Image
-                           style={styles.tinyLogo}
-                           source={{
-                              uri: `${poke.sprites.other.home.front_default}`,
-                           }}
-                        />
-                     </TouchableOpacity>
+                           <Image
+                              style={styles.tinyLogo}
+                              source={{
+                                 uri: `${poke.sprites.other.home.front_default}`,
+                              }}
+                           />
+                        </TouchableOpacity>
 
-                  </View>
-               )
-            })
-         }
-      </View >
-      // </ScrollView>
+                     </View>
+                  )
+               })
+            }
+         </View >
+      </ScrollView>
    );
 }
 

@@ -12,15 +12,6 @@ import HeaderComponent from './src/components/HeaderComponent';
 
 const image = { uri: "https://iili.io/7yJVa4.jpgttps://reactjs.org/logo-og.png" };
 
-// interface IPageIndividual {
-//    pokemon: null | any;
-//    setPokemon: React.Dispatch<React.SetStateAction<any>>;
-// }
-
-// const PageIndividual: React.FC<IPageIndividual> = ({
-//    pokemon, setPokemon
-// }) => {
-
 interface IMain {
    pokemon: null | any;
 }
@@ -51,13 +42,9 @@ const styles = StyleSheet.create({
    container: {
       flex: 1,
       justifyContent: 'center',
-      // backgroundColor: "rgba(0, 0, 255, 0.5)",
    },
    image: {
       flex: 1,
-      // justifyContent: 'center',
-      // backgroundColor: "rgba(0, 0, 255, 0.5)",
-      // // backgroundColor: "red"
    },
 });
 

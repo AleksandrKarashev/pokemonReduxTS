@@ -1,6 +1,4 @@
-//import { registerRootComponent } from 'expo';
-
-import { Dimensions, SafeAreaView, StatusBar, StyleSheet } from 'react-native';
+import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
 import React from 'react';
 import Main from './Main';
 import { Provider } from 'react-redux';
@@ -23,14 +21,11 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       backgroundColor: "rgba(0, 0, 255, 0.5)",
-      // padding: 0,
-      // margin: 0,
    },
 });
 
 export default App;
 
-//registerRootComponent(RNRedux);
 
 
 

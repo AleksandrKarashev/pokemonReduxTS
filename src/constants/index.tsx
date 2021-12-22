@@ -1,2 +1,4 @@
-export const POKEMON_SET = 'POKEMON_SET';
-export const POKES_SET = 'POKES_SET';
+export enum TypeKeys {
+   POKEMON_SET = "POKEMON_SET",
+   POKES_SET = "POKES_SET",
+}
